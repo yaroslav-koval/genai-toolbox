@@ -42,10 +42,10 @@ jobs:
             --cache
             --max-cache-age 1d
             --exclude '^neo4j\+.*' --exclude '^bolt://.*'
-            --format markdown  # Ensure the output is readable Markdown
-            --output ./lychee-report.md
             README.md
             docs/
+          output: lychee-report.md
+          format: markdown
           fail: true           # Mark the step outcome as 'failure' internally
           jobSummary: false    # IMPORTANT: Don't write the report yet!
           debug: false
