@@ -183,10 +183,13 @@ steps:
     args:
       - -c
       - |
-        .ci/test_with_coverage.sh \
-          "AlloyDB Omni" \
-          alloydbomni \
-          postgres
+        for i in {1..40}; do
+          echo "Run $i"
+          .ci/test_with_coverage.sh \
+            "AlloyDB Omni" \
+            alloydbomni \
+            postgres
+        done
 
   - id: "bigtable"
     name: golang:1
